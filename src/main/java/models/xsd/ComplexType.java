@@ -2,9 +2,14 @@ package models.xsd;
 
 import java.util.ArrayList;
 
+/**
+ * <h1>&lt xs:complexType&gt</h1>
+ * <p>Object representing a complex type</p>
+ */
 public class ComplexType {
     private String name = "";
     private String tagName = "";
+    //Arraylist that stores <xs:element> objects
     private ArrayList<Element> childrenElements = new ArrayList<>(0);
 
     public ComplexType() {
@@ -36,6 +41,16 @@ public class ComplexType {
 
     public void addChildElementToArrayList(Element element) {
         childrenElements.add(element);
+    }
+
+    public Element getChildElementByName(String name) {
+        for (Element element : childrenElements) {
+            if (element.getName().equals(name)) {
+                return element;
+            }
+        }
+
+        return null;
     }
 
     @Override

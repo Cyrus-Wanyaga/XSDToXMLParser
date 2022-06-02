@@ -60,6 +60,16 @@ public class XSDObjectsHandler {
         return null;
     }
 
+    public Element getElementByName(String name) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name)) {
+                return element;
+            }
+        }
+
+        return null;
+    }
+
     public Element getElementByTypeAndName(String type, String name) {
         for (Element element : elementArrayList) {
             if (element.getName().equals(name) && element.getType().equals(type)) {

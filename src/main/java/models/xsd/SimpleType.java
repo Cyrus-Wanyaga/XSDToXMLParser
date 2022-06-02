@@ -2,7 +2,7 @@ package models.xsd;
 
 public class SimpleType {
     private String name = "";
-
+    private Element element;
 
     public SimpleType() {
     }
@@ -13,6 +13,14 @@ public class SimpleType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Element getElement() {
+        return element;
+    }
+
+    public void setElement(Element element) {
+        this.element = element;
     }
 
     @Override

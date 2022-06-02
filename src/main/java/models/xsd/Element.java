@@ -1,8 +1,15 @@
 package models.xsd;
 
+/**
+ * <h1>&lt xs:element&gt</h1>
+ * <p>Object representing an element</p>
+ */
 public class Element {
     private String name = "";
     private String type = "";
+    private String value = null;
+    private Integer minOccurs;
+    private Integer maxOccurs;
     private ComplexType parentComplexType;
 
     public Element() {
@@ -24,6 +31,30 @@ public class Element {
         this.type = type;
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public Integer getMinOccurs() {
+        return minOccurs;
+    }
+
+    public void setMinOccurs(Integer minOccurs) {
+        this.minOccurs = minOccurs;
+    }
+
+    public Integer getMaxOccurs() {
+        return maxOccurs;
+    }
+
+    public void setMaxOccurs(Integer maxOccurs) {
+        this.maxOccurs = maxOccurs;
+    }
+
     public ComplexType getParentComplexType() {
         return parentComplexType;
     }
@@ -37,7 +68,9 @@ public class Element {
         return "Element{" +
                 "name='" + name + '\'' +
                 ", type='" + type + '\'' +
-                ", parentComplexType=" + parentComplexType +
+                ", value='" + value + '\'' +
+                ", minOccurs=" + minOccurs +
+                ", maxOccurs=" + maxOccurs +
                 '}';
     }
 }
