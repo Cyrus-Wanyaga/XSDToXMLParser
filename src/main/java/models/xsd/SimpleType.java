@@ -1,3 +1,7 @@
+/**
+ * @author Cyrus Wanyaga
+ */
+
 package models.xsd;
 
 public class SimpleType {

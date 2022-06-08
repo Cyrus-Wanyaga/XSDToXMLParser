@@ -1,3 +1,7 @@
+/**
+ * @author Cyrus Wanyaga
+ */
+
 import models.handler.XSDObjectsHandler;
 import models.xsd.ComplexType;
 import models.xsd.Element;
@@ -80,7 +84,6 @@ public class XSDToXMLParser {
             elementTypeMapper(elementsNodeList);
 
             createComplexTypesForChildElements();
-            outputXMLStringBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>").append("\n");
             dynamicMappingLogicSample();
             ComplexType complexType = finalObjectsHandler.getComplexTypeByName(objectsHandler.getRootElement().getType());
             outputXMLStringBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>").append("\n");
