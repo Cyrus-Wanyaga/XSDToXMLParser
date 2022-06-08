@@ -3,7 +3,6 @@ package models.xsd;
 public class SimpleType {
     private String name = "";
     private Element element;
-    private boolean parsed = false;
 
     public SimpleType() {
     }
@@ -11,7 +10,6 @@ public class SimpleType {
     public SimpleType(SimpleType simpleType) {
         this.name = simpleType.getName();
         this.element = simpleType.getElement();
-        this.parsed = simpleType.isParsed();
     }
 
     public String getName() {
@@ -28,14 +26,6 @@ public class SimpleType {
 
     public void setElement(Element element) {
         this.element = element;
-    }
-
-    public boolean isParsed() {
-        return parsed;
-    }
-
-    public void setParsed(boolean parsed) {
-        this.parsed = parsed;
     }
 
     @Override

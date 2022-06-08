@@ -13,8 +13,6 @@ public class Element {
     private ComplexType parentComplexType;
     private ComplexType complexType = null;
     private SimpleType simpleType = null;
-    private boolean parsed = false;
-    private boolean written = false;
 
     public Element() {
     }
@@ -28,7 +26,6 @@ public class Element {
         this.complexType = element.getComplexType();
         this.simpleType = element.getSimpleType();
         this.parentComplexType = element.getParentComplexType();
-        this.parsed = element.isParsed();
     }
 
     public String getName() {
@@ -93,22 +90,6 @@ public class Element {
 
     public void setSimpleType(SimpleType simpleType) {
         this.simpleType = simpleType;
-    }
-
-    public boolean isParsed() {
-        return parsed;
-    }
-
-    public void setParsed(boolean parsed) {
-        this.parsed = parsed;
-    }
-
-    public boolean isWritten() {
-        return written;
-    }
-
-    public void setWritten(boolean written) {
-        this.written = written;
     }
 
     @Override

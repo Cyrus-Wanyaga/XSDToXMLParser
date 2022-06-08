@@ -103,26 +103,6 @@ public class XSDObjectsHandler {
         return complexTypes;
     }
 
-    public Element getUnparsedElementByNameAndParent(String name, String parentComplexType) {
-        for (Element element : elementArrayList) {
-            if (element.getName().equals(name) && element.getParentComplexType().getName().equals(parentComplexType) && !element.isParsed()) {
-                return element;
-            }
-        }
-
-        return null;
-    }
-
-    public Element getElementByTypeAndName(String type, String name) {
-        for (Element element : elementArrayList) {
-            if (element.getName().equals(name) && element.getType().equals(type)) {
-                return element;
-            }
-        }
-
-        return null;
-    }
-
     public Element getParentComplexTypeNotSetElement(String type, String name) {
         for (Element element : elementArrayList) {
             if (element.getName().equals(name) && element.getType().equals(type) && element.getParentComplexType() == null) {
@@ -186,38 +166,6 @@ public class XSDObjectsHandler {
     public Element getElementWithoutComplex(String type, String name) {
         for (Element element : elementArrayList) {
             if (element.getName().equals(name) && element.getType().equals(type) && element.getComplexType() == null) {
-                return element;
-            }
-        }
-
-        return null;
-    }
-
-    public Element getElement(Element element) {
-        for (Element element1 : elementArrayList) {
-            if (element1.equals(element)) {
-                return element1;
-            }
-        }
-
-        return null;
-    }
-
-    public Element getSingleInstanceOfElement(String name, String type) {
-        for (Element element : elementArrayList) {
-            if (element.getName().equals(name) && element.getType().equals(type)) {
-                if (element.getParentComplexType() == null) {
-                    return element;
-                }
-            }
-        }
-
-        return null;
-    }
-
-    public Element getElementByNameAndParentType(String elementName, String parentType) {
-        for (Element element : elementArrayList) {
-            if (element.getName().equals(elementName) && element.getParentComplexType().getName().equals(parentType)) {
                 return element;
             }
         }
