@@ -11,8 +11,24 @@ public class Element {
     private Integer minOccurs;
     private Integer maxOccurs;
     private ComplexType parentComplexType;
+    private ComplexType complexType = null;
+    private SimpleType simpleType = null;
+    private boolean parsed = false;
+    private boolean written = false;
 
     public Element() {
+    }
+
+    public Element(Element element){
+        this.name = element.getName();
+        this.type = element.getType();
+        this.value = element.getValue();
+        this.minOccurs = element.getMinOccurs();
+        this.maxOccurs = element.getMaxOccurs();
+        this.complexType = element.getComplexType();
+        this.simpleType = element.getSimpleType();
+        this.parentComplexType = element.getParentComplexType();
+        this.parsed = element.isParsed();
     }
 
     public String getName() {
@@ -63,6 +79,38 @@ public class Element {
         this.parentComplexType = parentComplexType;
     }
 
+    public ComplexType getComplexType() {
+        return complexType;
+    }
+
+    public void setComplexType(ComplexType complexType) {
+        this.complexType = complexType;
+    }
+
+    public SimpleType getSimpleType() {
+        return simpleType;
+    }
+
+    public void setSimpleType(SimpleType simpleType) {
+        this.simpleType = simpleType;
+    }
+
+    public boolean isParsed() {
+        return parsed;
+    }
+
+    public void setParsed(boolean parsed) {
+        this.parsed = parsed;
+    }
+
+    public boolean isWritten() {
+        return written;
+    }
+
+    public void setWritten(boolean written) {
+        this.written = written;
+    }
+
     @Override
     public String toString() {
         return "Element{" +
@@ -71,6 +119,9 @@ public class Element {
                 ", value='" + value + '\'' +
                 ", minOccurs=" + minOccurs +
                 ", maxOccurs=" + maxOccurs +
+                ", complexType=" + complexType +
+                ", simpleType=" + simpleType +
+                ", parentComplexType=" + complexType +
                 '}';
     }
 }

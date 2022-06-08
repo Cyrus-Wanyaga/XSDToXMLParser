@@ -70,9 +70,72 @@ public class XSDObjectsHandler {
         return null;
     }
 
+    public ArrayList<Element> getElementsByName(String name) {
+        ArrayList<Element> elementArrayList1 = new ArrayList<>();
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name)) {
+                elementArrayList1.add(element);
+            }
+        }
+
+        return elementArrayList1;
+    }
+
+    public boolean removeElementFromList(Element element) {
+        for (Element element1 : elementArrayList) {
+            if (element1.equals(element)) {
+                elementArrayList.remove(element1);
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public ArrayList<ComplexType> getComplexTypesByName (String name) {
+        ArrayList<ComplexType> complexTypes = new ArrayList<>();
+        for (ComplexType complexType : complexTypeArrayList){
+            if (complexType.getName().equals(name)){
+                complexTypes.add(complexType);
+            }
+        }
+
+        return complexTypes;
+    }
+
+    public Element getUnparsedElementByNameAndParent(String name, String parentComplexType) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name) && element.getParentComplexType().getName().equals(parentComplexType) && !element.isParsed()) {
+                return element;
+            }
+        }
+
+        return null;
+    }
+
     public Element getElementByTypeAndName(String type, String name) {
         for (Element element : elementArrayList) {
             if (element.getName().equals(name) && element.getType().equals(type)) {
+                return element;
+            }
+        }
+
+        return null;
+    }
+
+    public Element getParentComplexTypeNotSetElement(String type, String name) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name) && element.getType().equals(type) && element.getParentComplexType() == null) {
+                return element;
+            }
+        }
+
+        return null;
+    }
+
+    public Element getSimpleTypeNotSetElement(String type, String name) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name) && element.getType().equals(type) && element.getSimpleType() == null) {
                 return element;
             }
         }
@@ -108,5 +171,57 @@ public class XSDObjectsHandler {
         }
 
         return false;
+    }
+
+    public SimpleType getSimpleTypeByName(String name) {
+        for (SimpleType simpleType : simpleTypeArrayList) {
+            if (simpleType.getName().equals(name)) {
+                return simpleType;
+            }
+        }
+
+        return null;
+    }
+
+    public Element getElementWithoutComplex(String type, String name) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name) && element.getType().equals(type) && element.getComplexType() == null) {
+                return element;
+            }
+        }
+
+        return null;
+    }
+
+    public Element getElement(Element element) {
+        for (Element element1 : elementArrayList) {
+            if (element1.equals(element)) {
+                return element1;
+            }
+        }
+
+        return null;
+    }
+
+    public Element getSingleInstanceOfElement(String name, String type) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(name) && element.getType().equals(type)) {
+                if (element.getParentComplexType() == null) {
+                    return element;
+                }
+            }
+        }
+
+        return null;
+    }
+
+    public Element getElementByNameAndParentType(String elementName, String parentType) {
+        for (Element element : elementArrayList) {
+            if (element.getName().equals(elementName) && element.getParentComplexType().getName().equals(parentType)) {
+                return element;
+            }
+        }
+
+        return null;
     }
 }
