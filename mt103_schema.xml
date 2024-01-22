@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml version="1.0" encoding="UTF-8"?>
 <Document>
     <FIToFICstmrCdtTrf>
         <GrpHdr>
-            <MsgId>FX1708062250</MsgId>
-            <CreDtTm>STANBICKKEEE</CreDtTm>
+            <MsgId></MsgId>
+            <CreDtTm></CreDtTm>
             <BtchBookg></BtchBookg>
             <NbOfTxs></NbOfTxs>
             <CtrlSum></CtrlSum>
@@ -19,7 +18,7 @@
             <PmtId>
                 <InstrId></InstrId>
                 <EndToEndId></EndToEndId>
-                <TxId>987654321</TxId>
+                <TxId></TxId>
                 <UETR></UETR>
                 <ClrSysRef></ClrSysRef>
             </PmtId>
@@ -56,31 +55,7 @@
                         <ClrSysMmbId></ClrSysMmbId>
                         <LEI></LEI>
                         <Nm></Nm>
-                        <PstlAdr>
-                            <AdrTp>
-                                <Cd></Cd>
-                                <Prtry>
-                                    <Id></Id>
-                                    <Issr></Issr>
-                                    <SchmeNm></SchmeNm>
-                                </Prtry>
-                            </AdrTp>
-                            <Dept></Dept>
-                            <SubDept></SubDept>
-                            <StrtNm></StrtNm>
-                            <BldgNb></BldgNb>
-                            <BldgNm></BldgNm>
-                            <Flr></Flr>
-                            <PstBx></PstBx>
-                            <Room></Room>
-                            <PstCd></PstCd>
-                            <TwnNm></TwnNm>
-                            <TwnLctnNm></TwnLctnNm>
-                            <DstrctNm></DstrctNm>
-                            <CtrySubDvsn></CtrySubDvsn>
-                            <Ctry></Ctry>
-                            <AdrLine>PARKLANDS 256789</AdrLine>
-                        </PstlAdr>
+                        <PstlAdr></PstlAdr>
                         <Othr></Othr>
                     </FinInstnId>
                     <BrnchId>
@@ -201,35 +176,11 @@
             </PrvsInstgAgt3Acct>
             <InstgAgt>
                 <FinInstnId>
-                    <BICFI>123456789</BICFI>
+                    <BICFI></BICFI>
                     <ClrSysMmbId></ClrSysMmbId>
                     <LEI></LEI>
-                    <Nm>Shem Muchemi</Nm>
-                    <PstlAdr>
-                        <AdrTp>
-                            <Cd></Cd>
-                            <Prtry>
-                                <Id></Id>
-                                <Issr></Issr>
-                                <SchmeNm></SchmeNm>
-                            </Prtry>
-                        </AdrTp>
-                        <Dept></Dept>
-                        <SubDept></SubDept>
-                        <StrtNm></StrtNm>
-                        <BldgNb></BldgNb>
-                        <BldgNm></BldgNm>
-                        <Flr></Flr>
-                        <PstBx></PstBx>
-                        <Room></Room>
-                        <PstCd></PstCd>
-                        <TwnNm></TwnNm>
-                        <TwnLctnNm></TwnLctnNm>
-                        <DstrctNm></DstrctNm>
-                        <CtrySubDvsn></CtrySubDvsn>
-                        <Ctry></Ctry>
-                        <AdrLine>J.P Morgan Chase Co</AdrLine>
-                    </PstlAdr>
+                    <Nm></Nm>
+                    <PstlAdr></PstlAdr>
                     <Othr></Othr>
                 </FinInstnId>
                 <BrnchId>
@@ -241,35 +192,11 @@
             </InstgAgt>
             <InstdAgt>
                 <FinInstnId>
-                    <BICFI>893512519</BICFI>
+                    <BICFI></BICFI>
                     <ClrSysMmbId></ClrSysMmbId>
                     <LEI></LEI>
                     <Nm></Nm>
-                    <PstlAdr>
-                        <AdrTp>
-                            <Cd></Cd>
-                            <Prtry>
-                                <Id></Id>
-                                <Issr></Issr>
-                                <SchmeNm></SchmeNm>
-                            </Prtry>
-                        </AdrTp>
-                        <Dept></Dept>
-                        <SubDept></SubDept>
-                        <StrtNm></StrtNm>
-                        <BldgNb></BldgNb>
-                        <BldgNm></BldgNm>
-                        <Flr></Flr>
-                        <PstBx></PstBx>
-                        <Room></Room>
-                        <PstCd></PstCd>
-                        <TwnNm></TwnNm>
-                        <TwnLctnNm></TwnLctnNm>
-                        <DstrctNm></DstrctNm>
-                        <CtrySubDvsn></CtrySubDvsn>
-                        <Ctry></Ctry>
-                        <AdrLine>Standard Chartered Bank Kenya</AdrLine>
-                    </PstlAdr>
+                    <PstlAdr></PstlAdr>
                     <Othr></Othr>
                 </FinInstnId>
                 <BrnchId>
@@ -422,7 +349,7 @@
                     <Prtry></Prtry>
                 </Tp>
                 <Ccy></Ccy>
-                <Nm>Cyrus Wanyaga</Nm>
+                <Nm></Nm>
                 <Prxy>
                     <Tp></Tp>
                     <Id></Id>

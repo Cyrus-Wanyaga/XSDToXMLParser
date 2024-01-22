@@ -2,7 +2,7 @@
  * @author Cyrus Wanyaga
  */
 
-package models.xsd;
+package com.techsol.models.xsd;
 
 import java.util.ArrayList;
 

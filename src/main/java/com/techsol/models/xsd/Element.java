@@ -2,7 +2,7 @@
  * @author Cyrus Wanyaga
  */
 
-package models.xsd;
+package com.techsol.models.xsd;
 
 /**
  * <h1>&lt xs:element&gt</h1>

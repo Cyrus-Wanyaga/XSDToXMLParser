@@ -2,11 +2,11 @@
  * @author Cyrus Wanyaga
  */
 
-package models.handler;
+package com.techsol.models.handler;
 
-import models.xsd.ComplexType;
-import models.xsd.Element;
-import models.xsd.SimpleType;
+import com.techsol.models.xsd.ComplexType;
+import com.techsol.models.xsd.Element;
+import com.techsol.models.xsd.SimpleType;
 
 import java.util.ArrayList;
 

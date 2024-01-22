@@ -2,10 +2,12 @@
  * @author Cyrus Wanyaga
  */
 
-import models.handler.XSDObjectsHandler;
-import models.xsd.ComplexType;
-import models.xsd.Element;
-import models.xsd.SimpleType;
+package com.techsol;
+
+import com.techsol.models.handler.XSDObjectsHandler;
+import com.techsol.models.xsd.ComplexType;
+import com.techsol.models.xsd.Element;
+import com.techsol.models.xsd.SimpleType;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -33,15 +35,37 @@ public class XSDToXMLParser {
 
     //A global string builder to used to store the contents of the XML output
     private static StringBuilder outputXMLStringBuilder;
+    //The path
+    private static String outputFolderPath;
 
     public static void main(String[] args) {
-        File directory = new File("schemas");
+        String schemasPath;
+        if (args.length > 0) {
+            schemasPath = args[0];
+        } else {
+            schemasPath = "schemas";
+        }
+
+        System.out.println("Schema directory is : " + schemasPath);
+        File directory = new File(schemasPath);
+
+        if (!directory.exists()) {
+            System.out.println("No such directory exists. Exiting ...");
+            System.out.println("Goodbye.");
+            return;
+        }
+
         //Get all the files in the directory specified and store the files in an array
         File[] files = directory.listFiles();
 
-        assert files != null;
+        if (files == null) {
+            System.out.println("No files found in schema directory.");
+            return;
+        }
+
         //Loop through each file to process it
         for (File file : files) {
+            System.out.println("Creating XML representation for XSD file : " + file.getName());
             createDocument(file);
         }
     }
@@ -84,14 +108,14 @@ public class XSDToXMLParser {
             elementTypeMapper(elementsNodeList);
 
             createComplexTypesForChildElements();
-            dynamicMappingLogicSample();
+//            dynamicMappingLogicSample();
             ComplexType complexType = finalObjectsHandler.getComplexTypeByName(objectsHandler.getRootElement().getType());
             outputXMLStringBuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>").append("\n");
             outputXMLStringBuilder.append("<").append(complexType.getName()).append(">");
             createOutputXML(complexType);
             outputXMLStringBuilder.append("</").append(complexType.getName()).append(">");
 
-            writeToFile();
+            writeToFile(file.getName());
         } catch (ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }
@@ -130,6 +154,7 @@ public class XSDToXMLParser {
 
     /**
      * Adds the element children to the enclosing complex type
+     *
      * @param nodeList
      * @param complexType
      */
@@ -159,6 +184,7 @@ public class XSDToXMLParser {
 
     /**
      * Go through each element in the node list, adding the complex type or simple type as necessary
+     *
      * @param nodeList
      */
     private static void elementTypeMapper(NodeList nodeList) {
@@ -256,7 +282,7 @@ public class XSDToXMLParser {
 
     /**
      * Create the output xml by mapping through the initial complex type e.g.
-     *
+     * <p>
      * Document has child element FIToFICstmrCdtTrf, of which this element has a complex type with child elements, and so on and so forth
      *
      * @param complexType
@@ -278,9 +304,9 @@ public class XSDToXMLParser {
     /**
      * Write the string to a file
      */
-    private static void writeToFile() {
+    private static void writeToFile(String outputFileName) {
         try {
-            FileWriter outputFile = new FileWriter("output" + ".xml");
+            FileWriter outputFile = new FileWriter(".." + File.separator + outputFileName.replace(".xsd", ".xml"));
             outputFile.write(outputXMLStringBuilder.toString());
             outputFile.close();
         } catch (IOException e) {

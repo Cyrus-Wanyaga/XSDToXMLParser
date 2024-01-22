@@ -2,7 +2,7 @@
  * @author Cyrus Wanyaga
  */
 
-package models.xsd;
+package com.techsol.models.xsd;
 
 public class SimpleType {
     private String name = "";
